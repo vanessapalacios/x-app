@@ -1,0 +1,92 @@
+# services/users/project/tests/test_users.py
+
+
+import json
+import unittest
+
+from project.tests.base import BaseTestCase
+
+
+class TestUserService(BaseTestCase):
+    """Tests para el servicio Users."""
+
+    def test_users(self):
+        """Asegurando que la ruta /ping  se comporta correctamente."""
+        response = self.client.get('/users/ping')
+        data = json.loads(response.data.decode())
+        self.assertEqual(response.status_code, 200)
+        self.assertIn('pong!', data['message'])
+        self.assertIn('success', data['status'])
+
+    def test_add_user(self):
+        """Asegurando que un nuevo usuario pueda ser agragado a la base de datos."""
+        with self.client:
+            response = self.client.post(
+                '/users',
+                data=json.dumps({
+                    'username': 'vanessa',
+                    'email': 'fiorellapalacios@upeu.edu.pe'
+                }),
+                content_type='application/json',
+
+            )
+            data = json.loads(response.data.decode())
+            self.assertEqual(response.status_code, 201)
+            self.assertIn('fiorellapalacios@upeu.edu.pe', data['message'])
+            self.assertIn('success', data['status'])
+    
+    def test_add_user_invalid_json(self):
+        """Asegurando que se produzca un error si el objeto json esta vacio."""
+        with self.client:
+            response = self.client.post(
+                '/users',
+                data=json.dumps({}),
+                content_type='application/json',
+            )
+            data = json.loads(response.data.decode())
+            self.assertEqual(response.status_code, 400)
+            self.assertIn('Carga invalida.', data['message'])
+            self.assertIn('falló', data['status'])  
+
+    def test_add_user_invalid_json_keys(self):
+        """
+        Asegurando que se produzca un error si el objeto json no tiene una clave username
+        """
+        with self.client:
+            response = self.client.post(
+                '/users',
+                data=json.dumps({'email': 'fiorellapalacios@upeu.edu.pe'}),
+                content_type='application/json',
+            )
+            data = json.loads(response.data.decode())
+            self.assertEqual(response.status_code, 400)
+            self.assertIn('Carga invalida.', data['message'])
+            self.assertIn('falló', data['status'])  
+
+    def test_add_user_duplicate_email(self):
+        """Asegurando que se produzca un error si el email ya existe."""
+        with self.client:
+            self.client.post(
+                '/users',
+                data=json.dumps({
+                    'username': 'vanessa',
+                    'email': 'fiorellapalaciosupeu.edu.pe'
+                }),
+                content_type='application/json',
+            )
+            response = self.client.post(
+                '/users',
+                data=json.dumps({
+                    'username': 'vanessa',
+                    'email': 'fiorellapalaciosupeu.edu.pe'
+                }),
+                content_type='application/json',
+            )
+            data = json.loads(response.data.decode())
+            self.assertEqual(response.status_code, 400)
+            self.assertIn('lo siento. El email ya existe.', data['message'])
+            self.assertIn('falló', data['status'])
+
+
+if __name__ == '__main__':
+    unittest.main()
