@@ -27,6 +27,12 @@ def test():
     if result.wasSuccessful():
         return 0
     return 1
+@cli.command('seed_db')
+def seed_db():
+    """Sembrado de la base de datos."""
+    db.session.add(User(username='vanessa',email='vanessapalacios@upeu.edu.pe'))
+    db.session.add(User(username='fiorella',email='fiorellapalacios@gmail.com'))
+    db.session.commit()
 
 
 if __name__ == '__main__':
