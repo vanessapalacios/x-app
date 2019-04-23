@@ -138,6 +138,16 @@ class TestUserService(BaseTestCase):
             self.assertIn('fiorella', data['data']['users'][1]['username'])
             self.assertIn('fiorellapalacios@gmail.com', data['data']['users'][1]['email'])
             self.assertIn('satisfactorio', data['estado'])
+    
+    def test_main_no_users(self):
+        """Asegurando que la ruta principal funcione correctamente cuando no 
+        hay usuarios añadidos a la base de datos."""
+        response = self.client.get('/')
+        self.assertEqual(response.status_code, 200)
+        self.assertIn(b'Todos los usuarios', response.data)
+        self.assertIn(b'<p>No hay Usuarios!</p>', response.data)
+        self.assertIn(b'vanessa', response.data)
+        self.assertIn(b'palacios', response.data)
 
 if __name__ == '__main__':
     unittest.main()
