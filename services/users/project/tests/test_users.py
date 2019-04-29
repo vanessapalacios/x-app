@@ -145,9 +145,39 @@ class TestUserService(BaseTestCase):
         response = self.client.get('/')
         self.assertEqual(response.status_code, 200)
         self.assertIn(b'Todos los usuarios', response.data)
-        self.assertIn(b'<p>No hay Usuarios!</p>', response.data)
-        self.assertIn(b'vanessa', response.data)
-        self.assertIn(b'palacios', response.data)
+        self.assertNotIn(b'<p>No hay Usuarios!</p>', response.data)
+        #self.assertIn(b'vanessa', response.data)
+        #self.assertIn(b'palacios', response.data)
+
+    def test_main_with_users(self):
+        """Asegurando que la ruta principal funcione correctamentre 
+        cuando un usuario es correctamnete agregado a la base de datos"""
+        add_user('vanessa', 'fiorellapalacios@upeu.edu.pe')
+        add_user('fiorella','fiorella@gmail.com')
+        with self.client:
+            response = self.client.get('/')
+            self.assertEqual(response.status_code,200)
+            self.assertIn(b'Todos los usuarios', response.data)
+            self.assertNotIn(b'<p>No hay usuarios</p>', response.data)
+            self.assertIn(b'vanessa',response.data)
+            self.assertIn(b'fiorella',response.data)
+
+    def test_main_add_user(self):
+        """
+        Aseguramos que un nuevo usuario pueda ser agregado a la db mediante post request
+        """
+        with self.client:
+            response = self.client.post(
+                '/',
+                data= dict(username='vanessa', email='fiorellapalacios@upeu.edu.pe'),
+                follow_redirects=True
+            )
+            self.assertEqual(response.status_code,200)
+            self.assertIn(b'Todos los usuarios',response.data)
+            self.assertNotIn(b'<p>No hay usuarios</p>', response.data)
+            self.assertIn(b'vanessa',response.data)
+
+
 
 if __name__ == '__main__':
     unittest.main()

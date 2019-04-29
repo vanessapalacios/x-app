@@ -81,7 +81,7 @@
     <div class="container">
       <div class="column is-one-third">
         <br>
-        <h1 class="title">Todos los usuarios</h1>
+        <h1 class="title">Usuario</h1>
         <hr><br>
         <form action="/" method="POST">
           <div class="field">
@@ -100,19 +100,6 @@
         </form>
         <br>
         <hr>
-          {% if users %}
-            <ol>
-              {% for user in users %}
-                <li>{{user.username}} 
-                  <a class="button is-small is-primary">Editar</a> 
-                  <a class="button is-small is-danger">Eliminar</a> 
-                </li>
-                <hr>
-              {% endfor %}
-            </ol>
-          {% else %}
-            <p>No hay usuarios!</p>
-          {% endif %}
         </div>
       </div>
     </div>
