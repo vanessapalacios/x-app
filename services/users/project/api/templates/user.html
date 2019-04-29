@@ -83,15 +83,16 @@
         <br>
         <h1 class="title">Usuario</h1>
         <hr><br>
-        <form action="/" method="POST">
+        <form action="/user" method="POST">
+          <input type="hidden" name="iduser" value="{{user.id}}">
           <div class="field">
             <input
-              name="username" class="input"
+              name="username" class="input" value="{{user.username}}"
               type="text" placeholder="Ingrese un nombre de usuario" required>
           </div>
           <div class="field">
             <input
-              name="email" class="input"
+              name="email" class="input" value="{{user.email}}"
               type="email" placeholder="Ingrese una direcci√≥n email" required>
           </div>
           <input

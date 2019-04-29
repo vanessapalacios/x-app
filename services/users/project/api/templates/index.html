@@ -104,8 +104,11 @@
             <ol>
               {% for user in users %}
                 <li>{{user.username}} 
-                  <a class="button is-small is-primary">Editar</a> 
-                  <a class="button is-small is-danger">Eliminar</a> 
+                  <a class="button is-small is-primary" href="users/{{user.id}}">Editar</a> 
+                  <form method="POST" action="/delete">
+                    <input type="hidden" name="iduser" value="{{user.id}}">
+                      <button type="submit" class="button is-small is-danger">Eliminar</button> 
+                  </form>
                 </li>
                 <hr>
               {% endfor %}

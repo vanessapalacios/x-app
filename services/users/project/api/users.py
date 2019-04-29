@@ -1,7 +1,7 @@
 # services/users/project/api/users.py
 
 
-from flask import Blueprint, jsonify, request, render_template
+from flask import Blueprint, jsonify, request, render_template, redirect
 
 from project.api.models import User
 from project import db
@@ -65,9 +65,11 @@ def get_single_user(user_id):
                     'active': user.active
                 }
             }
-            return jsonify(response_object), 200
+            #return jsonify(response_object), 200
+        return render_template('user.html', user=user)
     except ValueError:
         return jsonify(response_object), 404
+
 
 @users_blueprint.route('/users', methods=['GET'])
 def get_all_users():
@@ -90,3 +92,21 @@ def index():
         db.session.commit()
     users = User.query.all()
     return render_template('index.html', users=users)
+@users_blueprint.route('/user', methods=['POST'])
+def update_user():
+    if request.method == 'POST':
+        iduser = request.form['iduser']
+        user = User.query.get(iduser)
+        user.username = request.form['username']
+        user.email = request.form['email']
+        db.session.commit()
+        return redirect('/',code=302)
+
+@users_blueprint.route('/delete',methods=['POST'])
+def delete_user():
+    if request.method == 'POST':
+        iduser = request.form['iduser']
+        user = User.query.filter_by(id=iduser).one()
+        db.session.delete(user)
+        db.session.commit()
+        return redirect('/',code=302)
