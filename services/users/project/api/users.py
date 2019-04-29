@@ -92,6 +92,8 @@ def index():
         db.session.commit()
     users = User.query.all()
     return render_template('index.html', users=users)
+
+    
 @users_blueprint.route('/user', methods=['POST'])
 def update_user():
     if request.method == 'POST':
@@ -101,12 +103,12 @@ def update_user():
         user.email = request.form['email']
         db.session.commit()
         return redirect('/',code=302)
-
-@users_blueprint.route('/delete',methods=['POST'])
+        
+@users_blueprint.route('/delete', methods=['POST'])
 def delete_user():
     if request.method == 'POST':
         iduser = request.form['iduser']
-        user = User.query.filter_by(id=iduser).one()
+        user = User.query.get(iduser)
         db.session.delete(user)
         db.session.commit()
-        return redirect('/',code=302)
+        return redirect('/', code=302)
