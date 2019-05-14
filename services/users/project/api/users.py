@@ -65,8 +65,8 @@ def get_single_user(user_id):
                     'active': user.active
                 }
             }
-            #return jsonify(response_object), 200
-        return render_template('user.html', user=user)
+            return jsonify(response_object), 200
+        #return render_template('user.html', user=user)
     except ValueError:
         return jsonify(response_object), 404
 
