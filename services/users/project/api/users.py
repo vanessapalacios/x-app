@@ -22,7 +22,7 @@ def ping_pong():
 def add_user():
     post_data = request.get_json()
     response_object = {
-            'status': 'falló',
+            'status': 'failed',
             'message': 'carga invalida.'
     }
     if not post_data:
@@ -48,7 +48,7 @@ def add_user():
 def get_single_user(user_id):
     """Obtener detalles de usuario único """
     response_object = {
-        'estado': 'fallo',
+        'status': 'failed',
         'mensaje': 'El usuario no existe'
     }
     try:
@@ -57,7 +57,7 @@ def get_single_user(user_id):
             return jsonify(response_object), 404
         else:
             response_object = {
-                'estado': 'satisfactorio',
+                'status': 'success',
                 'data': {
                     'id': user.id,
                     'username': user.username,
@@ -75,7 +75,7 @@ def get_single_user(user_id):
 def get_all_users():
     """Obteniendo todos los usuarios"""
     response_object = {
-        'estado': 'satisfactorio',
+        'status': 'success',
         'data': {
             'users': [user.to_json() for user in User.query.all()]
         }
