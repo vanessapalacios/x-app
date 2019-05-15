@@ -1,15 +1,14 @@
 # services/users/project/tests/test_config.py
 
-
 import os
 import unittest
 
 from flask import current_app
 from flask_testing import TestCase
-
 from project import create_app
 
-app=create_app()
+app = create_app()
+
 
 class TestDevelopmentConfig(TestCase):
     def create_app(self):
@@ -35,7 +34,8 @@ class TestTestingConfig(TestCase):
         self.assertTrue(app.config['TESTING'])
         self.assertFalse(app.config['PRESERVE_CONTEXT_ON_EXCEPTION'])
         self.assertTrue(
-            app.config['SQLALCHEMY_DATABASE_URI'] == os.environ.get('DATABASE_TEST_URL')
+            app.config['SQLALCHEMY_DATABASE_URI'] ==
+            os.environ.get('DATABASE_TEST_URL')
         )
 
 

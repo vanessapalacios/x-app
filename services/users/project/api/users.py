@@ -16,7 +16,8 @@ def ping_pong():
     return jsonify({
         'status': 'success',
         'message': 'pong!'
-})
+        })
+
 
 @users_blueprint.route('/users', methods=['POST'])
 def add_user():
@@ -34,7 +35,7 @@ def add_user():
         if not user:
             db.session.add(User(username=username, email=email))
             db.session.commit()
-            response_object['status' ]= 'success'
+            response_object['status'] = 'success'
             response_object['message'] = f'{email} ha sido agregado!'
             return jsonify(response_object), 201
         else:
@@ -43,7 +44,8 @@ def add_user():
     except exc.IntegrityError:
         db.session.rollback()
         return jsonify(response_object), 400
-        
+
+
 @users_blueprint.route('/users/<user_id>', methods=['GET'])
 def get_single_user(user_id):
     """Obtener detalles de usuario único """
@@ -66,7 +68,7 @@ def get_single_user(user_id):
                 }
             }
             return jsonify(response_object), 200
-        #return render_template('user.html', user=user)
+        # return render_template('user.html', user=user)
     except ValueError:
         return jsonify(response_object), 404
 
@@ -83,17 +85,17 @@ def get_all_users():
     return jsonify(response_object), 200
 
 
-@users_blueprint.route('/', methods=['GET','POST'])
+@users_blueprint.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
         username = request.form['username']
         email = request.form['email']
-        db.session.add(User(username=username,email=email))
+        db.session.add(User(username=username, email=email))
         db.session.commit()
     users = User.query.all()
     return render_template('index.html', users=users)
 
-    
+
 @users_blueprint.route('/user', methods=['POST'])
 def update_user():
     if request.method == 'POST':
@@ -102,8 +104,9 @@ def update_user():
         user.username = request.form['username']
         user.email = request.form['email']
         db.session.commit()
-        return redirect('/',code=302)
-        
+        return redirect('/', code=302)
+
+
 @users_blueprint.route('/delete', methods=['POST'])
 def delete_user():
     if request.method == 'POST':
