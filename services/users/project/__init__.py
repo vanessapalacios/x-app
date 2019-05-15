@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 #  establecer configuraicon
 app_settings = os.getenv('APP_SETTINGS')  # Nuevo
-app.config.from_object(app_settings)      # Nuevo
+app.config.from_object(app_settings)  # Nuevo
 
 # instanciando la db
 db = SQLAlchemy(app)  # nuevo
