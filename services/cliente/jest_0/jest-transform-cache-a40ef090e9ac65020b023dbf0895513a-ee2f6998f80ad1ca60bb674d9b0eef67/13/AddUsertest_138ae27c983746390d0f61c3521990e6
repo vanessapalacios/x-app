@@ -1,0 +1,40 @@
+743f3dc61c210c70ffc7d165cfe24cfd
+"use strict";
+
+var _interopRequireDefault = require("/home/jhordyho/pexoxa/x-app/services/cliente/node_modules/@babel/runtime/helpers/interopRequireDefault");
+
+var _react = _interopRequireDefault(require("react"));
+
+var _enzyme = require("enzyme");
+
+var _reactTestRenderer = _interopRequireDefault(require("react-test-renderer"));
+
+var _AddUser = _interopRequireDefault(require("../AddUser"));
+
+var _jsxFileName = "/home/jhordyho/pexoxa/x-app/services/cliente/src/components/__tests__/AddUser.test.jsx";
+test('AddUser renders properly', () => {
+  const wrapper = (0, _enzyme.shallow)(_react.default.createElement(_AddUser.default, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8
+    },
+    __self: void 0
+  }));
+  const element = wrapper.find('form');
+  expect(element.find('input').length).toBe(3);
+  expect(element.find('input').get(0).props.name).toBe('username');
+  expect(element.find('input').get(1).props.name).toBe('email');
+  expect(element.find('input').get(2).props.type).toBe('submit');
+});
+test('AddUser renders a snapshot properly', () => {
+  const tree = _reactTestRenderer.default.create(_react.default.createElement(_AddUser.default, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17
+    },
+    __self: void 0
+  })).toJSON();
+
+  expect(tree).toMatchSnapshot();
+});
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkFkZFVzZXIudGVzdC5qc3giXSwibmFtZXMiOlsidGVzdCIsIndyYXBwZXIiLCJlbGVtZW50IiwiZmluZCIsImV4cGVjdCIsImxlbmd0aCIsInRvQmUiLCJnZXQiLCJwcm9wcyIsIm5hbWUiLCJ0eXBlIiwidHJlZSIsInJlbmRlcmVyIiwiY3JlYXRlIiwidG9KU09OIiwidG9NYXRjaFNuYXBzaG90Il0sIm1hcHBpbmdzIjoiOzs7O0FBQUE7O0FBQ0E7O0FBQ0E7O0FBRUE7OztBQUVBQSxJQUFJLENBQUMsMEJBQUQsRUFBNkIsTUFBTTtBQUNuQyxRQUFNQyxPQUFPLEdBQUcscUJBQVEsNkJBQUMsZ0JBQUQ7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUEsSUFBUixDQUFoQjtBQUNBLFFBQU1DLE9BQU8sR0FBR0QsT0FBTyxDQUFDRSxJQUFSLENBQWEsTUFBYixDQUFoQjtBQUNBQyxFQUFBQSxNQUFNLENBQUNGLE9BQU8sQ0FBQ0MsSUFBUixDQUFhLE9BQWIsRUFBc0JFLE1BQXZCLENBQU4sQ0FBcUNDLElBQXJDLENBQTBDLENBQTFDO0FBQ0FGLEVBQUFBLE1BQU0sQ0FBQ0YsT0FBTyxDQUFDQyxJQUFSLENBQWEsT0FBYixFQUFzQkksR0FBdEIsQ0FBMEIsQ0FBMUIsRUFBNkJDLEtBQTdCLENBQW1DQyxJQUFwQyxDQUFOLENBQWdESCxJQUFoRCxDQUFxRCxVQUFyRDtBQUNBRixFQUFBQSxNQUFNLENBQUNGLE9BQU8sQ0FBQ0MsSUFBUixDQUFhLE9BQWIsRUFBc0JJLEdBQXRCLENBQTBCLENBQTFCLEVBQTZCQyxLQUE3QixDQUFtQ0MsSUFBcEMsQ0FBTixDQUFnREgsSUFBaEQsQ0FBcUQsT0FBckQ7QUFDQUYsRUFBQUEsTUFBTSxDQUFDRixPQUFPLENBQUNDLElBQVIsQ0FBYSxPQUFiLEVBQXNCSSxHQUF0QixDQUEwQixDQUExQixFQUE2QkMsS0FBN0IsQ0FBbUNFLElBQXBDLENBQU4sQ0FBZ0RKLElBQWhELENBQXFELFFBQXJEO0FBQ0gsQ0FQRyxDQUFKO0FBU0FOLElBQUksQ0FBQyxxQ0FBRCxFQUF3QyxNQUFNO0FBQzlDLFFBQU1XLElBQUksR0FBR0MsMkJBQVNDLE1BQVQsQ0FBZ0IsNkJBQUMsZ0JBQUQ7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUEsSUFBaEIsRUFBNEJDLE1BQTVCLEVBQWI7O0FBQ0FWLEVBQUFBLE1BQU0sQ0FBQ08sSUFBRCxDQUFOLENBQWFJLGVBQWI7QUFDSCxDQUhHLENBQUoiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgUmVhY3QgZnJvbSAncmVhY3QnO1xuaW1wb3J0IHsgc2hhbGxvdyB9IGZyb20gJ2VuenltZSc7XG5pbXBvcnQgcmVuZGVyZXIgZnJvbSAncmVhY3QtdGVzdC1yZW5kZXJlcic7XG5cbmltcG9ydCBBZGRVc2VyIGZyb20gJy4uL0FkZFVzZXInO1xuXG50ZXN0KCdBZGRVc2VyIHJlbmRlcnMgcHJvcGVybHknLCAoKSA9PiB7XG4gICAgY29uc3Qgd3JhcHBlciA9IHNoYWxsb3coPEFkZFVzZXIvPik7XG4gICAgY29uc3QgZWxlbWVudCA9IHdyYXBwZXIuZmluZCgnZm9ybScpO1xuICAgIGV4cGVjdChlbGVtZW50LmZpbmQoJ2lucHV0JykubGVuZ3RoKS50b0JlKDMpO1xuICAgIGV4cGVjdChlbGVtZW50LmZpbmQoJ2lucHV0JykuZ2V0KDApLnByb3BzLm5hbWUpLnRvQmUoJ3VzZXJuYW1lJyk7XG4gICAgZXhwZWN0KGVsZW1lbnQuZmluZCgnaW5wdXQnKS5nZXQoMSkucHJvcHMubmFtZSkudG9CZSgnZW1haWwnKTtcbiAgICBleHBlY3QoZWxlbWVudC5maW5kKCdpbnB1dCcpLmdldCgyKS5wcm9wcy50eXBlKS50b0JlKCdzdWJtaXQnKTtcbn0pO1xuXG50ZXN0KCdBZGRVc2VyIHJlbmRlcnMgYSBzbmFwc2hvdCBwcm9wZXJseScsICgpID0+IHtcbiAgICBjb25zdCB0cmVlID0gcmVuZGVyZXIuY3JlYXRlKDxBZGRVc2VyLz4pLnRvSlNPTigpO1xuICAgIGV4cGVjdCh0cmVlKS50b01hdGNoU25hcHNob3QoKTtcbn0pO1xuICBcbiJdfQ==

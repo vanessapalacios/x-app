@@ -1,0 +1,37 @@
+6f778b847e5289856b2d4eead9067512
+"use strict";
+
+var _interopRequireDefault = require("/home/jhordyho/pexoxa/x-app/services/cliente/node_modules/@babel/runtime/helpers/interopRequireDefault");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _jsxFileName = "/home/jhordyho/pexoxa/x-app/services/cliente/src/components/UsersList.jsx";
+
+const UsersList = props => {
+  return _react.default.createElement("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 5
+    },
+    __self: void 0
+  }, props.users.map(user => {
+    return _react.default.createElement("h4", {
+      key: user.id,
+      className: "box litle is-4",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 9
+      },
+      __self: void 0
+    }, user.username);
+  }));
+};
+
+var _default = UsersList;
+exports.default = _default;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIlVzZXJzTGlzdC5qc3giXSwibmFtZXMiOlsiVXNlcnNMaXN0IiwicHJvcHMiLCJ1c2VycyIsIm1hcCIsInVzZXIiLCJpZCIsInVzZXJuYW1lIl0sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7QUFBQTs7OztBQUVBLE1BQU1BLFNBQVMsR0FBSUMsS0FBRCxJQUFXO0FBQ3pCLFNBQ0k7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUEsS0FFUUEsS0FBSyxDQUFDQyxLQUFOLENBQVlDLEdBQVosQ0FBaUJDLElBQUQsSUFBVTtBQUN0QixXQUNJO0FBQ0ksTUFBQSxHQUFHLEVBQUVBLElBQUksQ0FBQ0MsRUFEZDtBQUVJLE1BQUEsU0FBUyxFQUFDLGdCQUZkO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBLE9BR0dELElBQUksQ0FBQ0UsUUFIUixDQURKO0FBT0gsR0FSRCxDQUZSLENBREo7QUFlSCxDQWhCRDs7ZUFrQmVOLFMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgUmVhY3QgZnJvbSAncmVhY3QnO1xuXG5jb25zdCBVc2Vyc0xpc3QgPSAocHJvcHMpID0+IHtcbiAgICByZXR1cm4gKFxuICAgICAgICA8ZGl2PlxuICAgICAgICAgICAge1xuICAgICAgICAgICAgICAgIHByb3BzLnVzZXJzLm1hcCgodXNlcikgPT4ge1xuICAgICAgICAgICAgICAgICAgICByZXR1cm4gKFxuICAgICAgICAgICAgICAgICAgICAgICAgPGg0XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAga2V5PXt1c2VyLmlkfVxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNsYXNzTmFtZT1cImJveCBsaXRsZSBpcy00XCJcbiAgICAgICAgICAgICAgICAgICAgICAgID57IHVzZXIudXNlcm5hbWUgfVxuICAgICAgICAgICAgICAgICAgICAgICAgPC9oND5cbiAgICAgICAgICAgICAgICAgICAgKVxuICAgICAgICAgICAgICAgIH0pXG4gICAgICAgICAgICB9XG4gICAgICAgIDwvZGl2PlxuICAgIClcbn07XG5cbmV4cG9ydCBkZWZhdWx0IFVzZXJzTGlzdDsiXX0=

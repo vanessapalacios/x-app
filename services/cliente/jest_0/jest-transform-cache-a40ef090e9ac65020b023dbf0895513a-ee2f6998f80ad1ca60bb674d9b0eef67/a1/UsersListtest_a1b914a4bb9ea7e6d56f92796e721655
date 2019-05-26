@@ -1,0 +1,51 @@
+c0961bbc5d593e141de7289043110075
+"use strict";
+
+var _interopRequireDefault = require("/home/jhordyho/pexoxa/x-app/services/cliente/node_modules/@babel/runtime/helpers/interopRequireDefault");
+
+var _react = _interopRequireDefault(require("react"));
+
+var _enzyme = require("enzyme");
+
+var _UsersList = _interopRequireDefault(require("../UsersList"));
+
+var _reactTestRenderer = _interopRequireDefault(require("react-test-renderer"));
+
+var _jsxFileName = "/home/jhordyho/pexoxa/x-app/services/cliente/src/components/__tests__/UsersList.test.jsx";
+const users = [{
+  'active': true,
+  'email': 'fiorellapalacios@gmail.com',
+  'id': 1,
+  'username': 'fiorella'
+}, {
+  'activa': true,
+  'email': 'fiorellapalacios@upeu.edu.pe',
+  'id': 2,
+  'username': 'vanessa'
+}];
+test('UsersList renders properly', () => {
+  const wrapper = (0, _enzyme.shallow)(_react.default.createElement(_UsersList.default, {
+    users: users,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 23
+    },
+    __self: void 0
+  }));
+  const element = wrapper.find('h4');
+  expect(element.length).toBe(2);
+  expect(element.get(0).props.children).toBe('fiorella');
+});
+test('UsersList renders properly', () => {
+  const tree = _reactTestRenderer.default.create(_react.default.createElement(_UsersList.default, {
+    users: users,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 30
+    },
+    __self: void 0
+  })).toJSON();
+
+  expect(tree).toMatchSnapshot();
+});
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIlVzZXJzTGlzdC50ZXN0LmpzeCJdLCJuYW1lcyI6WyJ1c2VycyIsInRlc3QiLCJ3cmFwcGVyIiwiZWxlbWVudCIsImZpbmQiLCJleHBlY3QiLCJsZW5ndGgiLCJ0b0JlIiwiZ2V0IiwicHJvcHMiLCJjaGlsZHJlbiIsInRyZWUiLCJyZW5kZXJlciIsImNyZWF0ZSIsInRvSlNPTiIsInRvTWF0Y2hTbmFwc2hvdCJdLCJtYXBwaW5ncyI6Ijs7OztBQUFBOztBQUNBOztBQUVBOztBQUNBOzs7QUFFQSxNQUFNQSxLQUFLLEdBQUcsQ0FDVjtBQUNJLFlBQVUsSUFEZDtBQUVJLFdBQVMsNEJBRmI7QUFHSSxRQUFNLENBSFY7QUFJSSxjQUFZO0FBSmhCLENBRFUsRUFPVjtBQUNJLFlBQVUsSUFEZDtBQUVJLFdBQVMsOEJBRmI7QUFHSSxRQUFNLENBSFY7QUFJSSxjQUFZO0FBSmhCLENBUFUsQ0FBZDtBQWVBQyxJQUFJLENBQUMsNEJBQUQsRUFBK0IsTUFBTTtBQUNyQyxRQUFNQyxPQUFPLEdBQUcscUJBQVEsNkJBQUMsa0JBQUQ7QUFBVyxJQUFBLEtBQUssRUFBRUYsS0FBbEI7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUEsSUFBUixDQUFoQjtBQUNBLFFBQU1HLE9BQU8sR0FBR0QsT0FBTyxDQUFDRSxJQUFSLENBQWEsSUFBYixDQUFoQjtBQUNBQyxFQUFBQSxNQUFNLENBQUNGLE9BQU8sQ0FBQ0csTUFBVCxDQUFOLENBQXVCQyxJQUF2QixDQUE0QixDQUE1QjtBQUNBRixFQUFBQSxNQUFNLENBQUNGLE9BQU8sQ0FBQ0ssR0FBUixDQUFZLENBQVosRUFBZUMsS0FBZixDQUFxQkMsUUFBdEIsQ0FBTixDQUFzQ0gsSUFBdEMsQ0FBMkMsVUFBM0M7QUFDSCxDQUxHLENBQUo7QUFPQU4sSUFBSSxDQUFDLDRCQUFELEVBQStCLE1BQU07QUFDckMsUUFBTVUsSUFBSSxHQUFHQywyQkFBU0MsTUFBVCxDQUFnQiw2QkFBQyxrQkFBRDtBQUFXLElBQUEsS0FBSyxFQUFFYixLQUFsQjtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQSxJQUFoQixFQUE0Q2MsTUFBNUMsRUFBYjs7QUFDQVQsRUFBQUEsTUFBTSxDQUFDTSxJQUFELENBQU4sQ0FBYUksZUFBYjtBQUNILENBSEcsQ0FBSiIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBSZWFjdCBmcm9tICdyZWFjdCc7XG5pbXBvcnQgeyBzaGFsbG93IH0gZnJvbSAnZW56eW1lJztcblxuaW1wb3J0IFVzZXJzTGlzdCBmcm9tICcuLi9Vc2Vyc0xpc3QnO1xuaW1wb3J0IHJlbmRlcmVyIGZyb20gJ3JlYWN0LXRlc3QtcmVuZGVyZXInO1xuXG5jb25zdCB1c2VycyA9IFtcbiAgICB7XG4gICAgICAgICdhY3RpdmUnOiB0cnVlLFxuICAgICAgICAnZW1haWwnOiAnZmlvcmVsbGFwYWxhY2lvc0BnbWFpbC5jb20nLFxuICAgICAgICAnaWQnOiAxLFxuICAgICAgICAndXNlcm5hbWUnOiAnZmlvcmVsbGEnXG4gICAgfSxcbiAgICB7XG4gICAgICAgICdhY3RpdmEnOiB0cnVlLFxuICAgICAgICAnZW1haWwnOiAnZmlvcmVsbGFwYWxhY2lvc0B1cGV1LmVkdS5wZScsXG4gICAgICAgICdpZCc6IDIsXG4gICAgICAgICd1c2VybmFtZSc6ICd2YW5lc3NhJ1xuICAgIH1cbl07XG5cbnRlc3QoJ1VzZXJzTGlzdCByZW5kZXJzIHByb3Blcmx5JywgKCkgPT4ge1xuICAgIGNvbnN0IHdyYXBwZXIgPSBzaGFsbG93KDxVc2Vyc0xpc3QgdXNlcnM9e3VzZXJzfS8+KTtcbiAgICBjb25zdCBlbGVtZW50ID0gd3JhcHBlci5maW5kKCdoNCcpXG4gICAgZXhwZWN0KGVsZW1lbnQubGVuZ3RoKS50b0JlKDIpO1xuICAgIGV4cGVjdChlbGVtZW50LmdldCgwKS5wcm9wcy5jaGlsZHJlbikudG9CZSgnZmlvcmVsbGEnKTtcbn0pO1xuXG50ZXN0KCdVc2Vyc0xpc3QgcmVuZGVycyBwcm9wZXJseScsICgpID0+IHtcbiAgICBjb25zdCB0cmVlID0gcmVuZGVyZXIuY3JlYXRlKDxVc2Vyc0xpc3QgdXNlcnM9e3VzZXJzfS8+KS50b0pTT04oKTtcbiAgICBleHBlY3QodHJlZSkudG9NYXRjaFNuYXBzaG90KCk7XG59KTsiXX0=
