@@ -1,13 +1,12 @@
 # services/users/manage.py
 
-
 import unittest
 import coverage
 
 from flask.cli import FlaskGroup
 
-from project import create_app, db # new
-from project.api.models import User # new
+from project import create_app, db
+from project.api.models import User
 
 COV = coverage.coverage(
     branch=True,
