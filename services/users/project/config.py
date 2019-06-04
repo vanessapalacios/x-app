@@ -7,7 +7,7 @@ class BaseConfig:
     """Configuración base"""
     TESTING = False
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    SECRET_KEY = "my_secretkey"  # nuevo
+    SECRET_KEY = "my_secretkey"
     DEBUG_TB_ENABLED = False
     DEBUG_TB_INTERCEPT_REDIRECTS = False
 

@@ -8,15 +8,14 @@ services:
     expose:
       - 5000
     environment:
-      #- FLASK_APP=project/__init__.py
       - FLASK_ENV=production
-      - APP_SETTINGS=project.config.ProductionConfig  # nuevo
+      - APP_SETTINGS=project.config.ProductionConfig
       - DATABASE_URL=postgres://postgres:postgres@users-db:5432/users_prod  # nuevo
       - DATABASE_TEST_URL=postgres://postgres:postgres@users-db:5432/users_test  # nuevo
-    depends_on:  # nuevo
+    depends_on:
       - users-db
 
-  users-db:  # nuevo
+  users-db:
     build:
       context: ./services/users/project/db
       dockerfile: Dockerfile
